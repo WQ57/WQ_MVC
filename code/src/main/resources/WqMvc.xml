@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<!-- controller包 -->
+	<ControllerPackage>com.wq.controller</ControllerPackage>
+	
+	<!-- ajax渲染器 -->
+	<ajaxRender class="com.wq.web.servlet.render.JsonRender" />
+	
+	<!-- 页面渲染器 -->
+	<pageRender class="com.wq.web.servlet.render.FreemarkerRender">
+		<prefix>/html</prefix>
+		<suffix>.html</suffix>
+	</pageRender>
+</root>
