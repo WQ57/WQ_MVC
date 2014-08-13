@@ -44,11 +44,11 @@ public class DispatcherServlet extends HttpServlet {
 			contextConfigLocation = config
 					.getInitParameter("contextConfigLocation");
 			try {
-				// TODO 类加载器做到自动适配
-				ClassPool
-						.getDefault()
-						.insertClassPath(
-								"D:/MyPrograms/springsource/vfabric-tc-server-developer-2.9.3.RELEASE/WQ/wtpwebapps/WqMVC/WEB-INF/classes");
+				String classPath = Thread.currentThread()
+						.getContextClassLoader().getResource("").toString();
+				classPath = classPath.substring(6, classPath.length());
+				System.out.println(classPath);
+				ClassPool.getDefault().insertClassPath(classPath);
 			} catch (NotFoundException e) {
 				throw new WqMvcException(e);
 			}

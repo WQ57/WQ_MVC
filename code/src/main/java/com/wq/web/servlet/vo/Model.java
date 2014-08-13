@@ -11,13 +11,13 @@ import java.util.Map;
  */
 public class Model {
 
-	private Map<String, Object> bean = new HashMap<String, Object>();
+	private Map<Object, Object> bean = new HashMap<Object, Object>();
 
-	public Map<String, Object> getBean() {
+	public Map<Object, Object> getBean() {
 		return bean;
 	}
 
-	public void setBean(Map<String, Object> bean) {
+	public void setBean(Map<Object, Object> bean) {
 		this.bean = bean;
 	}
 

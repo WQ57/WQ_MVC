@@ -2,15 +2,19 @@ package com.wq.web.servlet.render;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.wq.common.util.DateUtil;
 import com.wq.web.servlet.exception.WqMvcException;
 import com.wq.web.servlet.vo.ModelAndView;
 
 import freemarker.template.Configuration;
+import freemarker.template.DefaultObjectWrapper;
 import freemarker.template.Template;
+import freemarker.template.TemplateDateModel;
 import freemarker.template.TemplateException;
 
 /**
@@ -60,6 +64,14 @@ public class FreemarkerRender implements Render {
 			cfg.setDirectoryForTemplateLoading(new File(req.getSession()
 					.getServletContext().getRealPath("/")
 					+ PageRenderConfig.pagePrefix));
+			DefaultObjectWrapper defaultObjectWrapper = new DefaultObjectWrapper();
+			defaultObjectWrapper.setDefaultDateType(TemplateDateModel.DATETIME);
+			cfg.setObjectWrapper(defaultObjectWrapper);
+			cfg.setDefaultEncoding("UTF-8");
+			cfg.setTagSyntax(Configuration.AUTO_DETECT_TAG_SYNTAX);  
+			cfg.setNumberFormat("0.######");
+			//cfg.setLocale(new Locale("en_US"));
+			//cfg.setDateFormat(DateUtil.format_01);
 			template = cfg.getTemplate(modelAndView.getView().getName()
 					+ PageRenderConfig.pageSuffix);
 		} catch (IOException e) {

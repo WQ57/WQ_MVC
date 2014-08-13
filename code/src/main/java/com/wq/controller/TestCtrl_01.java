@@ -14,7 +14,7 @@ public class TestCtrl_01 {
 	public ModelAndView method011(TestDTO dto) {
 		ModelAndView view = new ModelAndView();
 		view.setViewName("/test/page01");
-		view.addModle("obj", 111);
+		view.addModle("obj", dto);
 		return view;
 	}
 

@@ -1,6 +1,7 @@
 package com.wq.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class TestDTO implements Serializable {
 
@@ -15,7 +16,7 @@ public class TestDTO implements Serializable {
 
 	private Long l;
 
-	//private Date d;
+	private Date d;
 
 	/**
 	 * @return the s
@@ -62,19 +63,19 @@ public class TestDTO implements Serializable {
 		this.l = l;
 	}
 
-//	/**
-//	 * @return the d
-//	 */
-//	public Date getD() {
-//		return d;
-//	}
-//
-//	/**
-//	 * @param d
-//	 *            the d to set
-//	 */
-//	public void setD(Date d) {
-//		this.d = d;
-//	}
+	/**
+	 * @return the d
+	 */
+	public Date getD() {
+		return d;
+	}
+
+	/**
+	 * @param d
+	 *            the d to set
+	 */
+	public void setD(Date d) {
+		this.d = d;
+	}
 
 }
